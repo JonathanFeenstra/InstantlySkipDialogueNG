@@ -21,10 +21,10 @@ private:
 
 	inline static REL::Relocation<ProcessMessageFn> _ProcessMessageFn;
 
-	void doAllowProgressFix()
+	static void doAllowProgressFix()
 	{
-		if (auto ui = RE::UI::GetSingleton(); ui) {
-			if (auto menu = ui->GetMenu(RE::DialogueMenu::MENU_NAME); menu) {
+		if (const auto ui = RE::UI::GetSingleton(); ui) {
+			if (const auto menu = ui->GetMenu(RE::DialogueMenu::MENU_NAME); menu) {
 				menu->uiMovie->SetVariable("_root.DialogueMenu_mc.bAllowProgress", true);
 			}
 		}
