@@ -1,3 +1,5 @@
+#include "Settings.h"
+
 class DialogueMenuEx final : public RE::DialogueMenu
 {
 public:
@@ -9,7 +11,7 @@ public:
 
 	RE::UI_MESSAGE_RESULTS ProcessMessageEx(RE::UIMessage& a_message)
 	{
-		if (a_message.type == RE::UI_MESSAGE_TYPE::kUpdate) {
+		if ((Settings::instantlySkipDialogue && a_message.type == RE::UI_MESSAGE_TYPE::kUpdate) || (Settings::allowDialogueProgressBugfix && a_message.type == RE::UI_MESSAGE_TYPE::kShow)) {
 			doAllowProgressFix();
 		}
 
@@ -33,7 +35,8 @@ private:
 
 SKSEPluginLoad(const SKSE::LoadInterface* skse)
 {
-	SKSE::Init(skse);
+	Init(skse);
+	Settings::Load();
 	DialogueMenuEx::Install();
 	return true;
 }

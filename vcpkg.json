@@ -1,8 +1,9 @@
 {
     "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
     "name": "instantly-skip-dialogue-ng",
-    "version-string": "1.0.0",
+    "version-string": "1.1.0",
     "dependencies": [
-        "commonlibsse-ng"
+      "commonlibsse-ng",
+      "simpleini"
     ]
 }
