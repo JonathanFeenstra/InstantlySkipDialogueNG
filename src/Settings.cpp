@@ -10,5 +10,4 @@ void Settings::Load()
 	ini.LoadFile(R"(.\Data\SKSE\Plugins\InstantlySkipDialogueNG.ini)");
 
 	instantlySkipDialogue = ini.GetBoolValue("General", "bInstantlySkipDialogue");
-	allowDialogueProgressBugfix = ini.GetBoolValue("General", "bAllowDialogueProgressBugfix");
 }

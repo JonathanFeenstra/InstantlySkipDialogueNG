@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.21)
 
 project(
     InstantlySkipDialogueNG
-    VERSION 1.1.0
+    VERSION 1.1.1
     DESCRIPTION "SKSE plugin for Skyrim Special Edition that allows most of the dialogue directed to the player character to be skipped instantly."
     LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)

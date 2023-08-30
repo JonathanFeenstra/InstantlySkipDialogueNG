@@ -11,7 +11,11 @@ public:
 
 	RE::UI_MESSAGE_RESULTS ProcessMessageEx(RE::UIMessage& a_message)
 	{
-		if ((Settings::instantlySkipDialogue && a_message.type == RE::UI_MESSAGE_TYPE::kUpdate) || (Settings::allowDialogueProgressBugfix && a_message.type == RE::UI_MESSAGE_TYPE::kShow)) {
+		if (Settings::instantlySkipDialogue) {
+			if (a_message.type == RE::UI_MESSAGE_TYPE::kUpdate) {
+				doAllowProgressFix();
+			}
+		} else if (a_message.type == RE::UI_MESSAGE_TYPE::kShow) {
 			doAllowProgressFix();
 		}
 

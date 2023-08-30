@@ -6,7 +6,6 @@ public:
 	static void Load();
 
 	inline static bool instantlySkipDialogue;
-	inline static bool allowDialogueProgressBugfix;
 
 	// Prevent instantiation
 	Settings() = default;
